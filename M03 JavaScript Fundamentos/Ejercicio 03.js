@@ -40,13 +40,17 @@ function mayorQueCincuenta(num) {
    // De lo contrario, retorna false.
    // Tu código:
    
-if(num > 50){
-   return 'es mayor que cincuenta';}
-   else {
+   if(num > 50){
+      return true;
+   }else {
       return false;
    }
+
    }
 
+   //opcion 2
+   
+   //return num > 50;
 
 function esPar(num) {
    // Retorna true si "num" es par.
