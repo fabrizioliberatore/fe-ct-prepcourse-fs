@@ -22,13 +22,16 @@ function agregarPropiedad(objeto, propiedad) {
    // Esta propiedad será igual al valor `null`.
    // Retornar el objeto.
    // Tu código:
+   objeto[propiedad] = null;
+   return objeto;
 }
 
 function invocarMetodo(objeto, metodo) {
    // El parámetro "metodo" es un string que coincide con el nombre de una propiedad del objeto recibido.
    // Esta propiedad contiene una función en su interior. Debes invocarla/ejecutarla.
    // [NOTA]: no necesitar retornar nada.
-   // Tu código:
+   // Tu código:         //objeto = {metodo:function()}
+   objeto[metodo](); //con metodo accedo a la funcion ,luego los ()
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
@@ -59,6 +62,7 @@ function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
+   return objetoUsuario.password === password;
 }
 
 function actualizarPassword(objetoUsuario, nuevaPassword) {
@@ -66,6 +70,8 @@ function actualizarPassword(objetoUsuario, nuevaPassword) {
    // La nueva contraseña la recibes por parámetro.
    // Retornar el objeto.
    // Tu código:
+   objetoUsuario.password = nuevaPassword;
+   return objetoUsuario;
 }
 
 function agregarAmigo(objetoUsuario, nuevoAmigo) {
@@ -73,6 +79,8 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
+   objetoUsuario.amigos.push(nuevoAmigo);//solo puedo poner push pq nuevoAmigo es un array
+   return objetoUsuario;
 }
 
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
@@ -81,6 +89,13 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // Define esta propiedad de todos los usuarios como true.
    // Retornar el arreglo.
    // Tu código:
+
+   //objetoMuchosUsuarios = [{esPremium: ?}, {esPremium: ?},{esPremium: ?}]
+   //                            usuario        usuario         usuario
+
+   objetoMuchosUsuarios.forEach(function(usuario){
+      usuario.esPremium = true;
+   })
 }
 
 function sumarLikesDeUsuario(objetoUsuario) {
@@ -89,6 +104,19 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
+
+   //objetoUsuario ={posts: [{likes: 3  }, {likes:#  }, {likes:#  }]}
+   //                         post            post        post
+
+   var totalLikes = 0;
+
+objetoUsuario.posts.forEach(function(post){
+
+   totalLikes = totalLikes + post.likes;
+   //  acumulador  =   + 3
+})
+
+return totalLikes;
 }
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
@@ -102,6 +130,12 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
+
+   //objetoProducto ={precio: 10,porcentajeDeDescuento: 0.2, calcularPrecioDescuento:function()}
+
+   objetoProducto.calcularPrecioDescuento = function(){
+      return this.precio  - (this.precio * this.porcentajeDeDescuento);
+   }
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
