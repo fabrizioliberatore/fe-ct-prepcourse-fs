@@ -345,19 +345,39 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
-   var array = [];
-   var suma = num;
-   for (var i = 0; i < 10; i++) {
-     if (i + 1 === 5) 
-     continue;
-     else {
-      suma = suma + 2;
-       array.push(suma);
-     }
+   // var array = [];
+   // var suma = num;
+   // for (var i = 0; i < 10; i++) {
+   //   if (i + 1 === 5) 
+   //   continue;
+   //   else {
+   //    suma = suma + 2;
+   //     array.push(suma);
+   //   }
+   // }
+   //   return array;
+   // }
+
+   //opcion 2,while
+
+   var i = 0;
+   const new_array = [];
+   
+   while(i < 10){
+   i++;
+   
+   
+   if(i === 5){
+   
+   continue;
+   
    }
-     return array;
+   new_array.push(num += 2);
    }
- 
+   
+   return new_array;
+   
+   }
 
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

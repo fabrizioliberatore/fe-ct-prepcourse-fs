@@ -421,3 +421,224 @@
 //     var concatenacion = palabras.reduce(union);
 //     return concatenacion;
     
+
+//---------------------------clase 4----------------------------------------
+
+//____________objetos_______________
+// ej:
+// var usuario = {
+// nombre : "fabrizio",
+// password : "hola123",
+// edad : 33,
+// online : true,
+// amigos:["maria", "jose"]
+// };
+////____dot notation
+
+// console.log(usuario);
+// console.log(usuario.nombre);
+// console.log(usuario.online)
+
+////_____bracket notation
+
+// console.log([usuario]);
+// console.log(usuario["nombre"]);
+// console.log(usuario["amigos"])
+
+
+//// ____asignar
+
+// usuario.pais = "colombia";
+// usuario["identificacion"] = 1234;
+
+// //___modificar
+
+// usuario.pais = "argentina";
+// usuario["pais"] = "uruguay";
+
+////______diferencia entre dot y bracket
+
+// var usuario = {
+//     nombre : "fabrizio",
+//     password : "hola123",
+//     edad : 33,
+//     online : true,
+//     amigos:["maria", "jose"]
+//     }
+
+// var profesion = "developer";
+// usuario["123hola"] = false;
+// usuario.jungla = profesion;
+// usuario[profesion] = profesion;
+// usuario["jungla"] = profesion;
+// usuario["123hola"] = false;
+
+// console.log(profesion);
+
+
+////_______delete
+
+
+// var usuario = {
+//     nombre : "fabrizio",
+//     password : "hola123",
+//     pais : "argentina",
+//     edad : 33,
+//     online : true,
+//     amigos:["maria", "jose"]
+//     }
+//     usuario["123hola"] = false;
+//     usuario.lio = "fabri"
+//     delete usuario["123hola"];
+//     delete usuario.edad;
+
+//     var pais = "bolivia"; // esta variable no existe dentro del objeto,sigue siendo argentina
+    
+//     console.log(usuario);
+
+//_____metodos de los objetos_______
+
+// //ej 1
+
+// var usuario = {
+//     decirHola : function(){
+//         return "hola";
+//     }
+
+// }
+
+//     console.log(usuario.decirHola());
+
+// //ej 2
+
+// var usuario = {
+//         nombre : "fabrizio",
+//         password : "hola123",
+//         pais : "argentina",
+//         edad : 33,
+//         online : true,
+//         amigos:["maria", "jose"]
+//         }
+
+// usuario.decirHola = function(){
+//     return "hola";
+// }
+// console.log(usuario.decirHola());
+
+// //ej 3
+
+// var usuario = {
+//     nombre : "fabrizio",
+//     password : "hola123",
+//     pais : "argentina",
+//     edad : 33,
+//     online : true,
+//     amigos:["maria", "jose"]
+//     }
+
+// usuario.decirHola = function(name){
+// return "hola" + " " + name;
+// }
+// console.log(usuario.decirHola("lucas"));
+
+
+
+//______metodo hasOwnProperty()
+
+// var objeto ={
+//     nombre : "felipe",
+//     decirHola : function(name){
+//         return "hola" + " " + name
+//     }
+// }
+// console.log(Object.keys(objeto));
+// console.log(objeto.hasOwnProperty("nombre")); // me da true
+// console.log(objeto.hasOwnProperty("pais")); //me da false
+
+
+//_____metodo Object.keys
+
+// var usuario = {
+//         nombre : "fabrizio",
+//         password : "hola123",
+//         pais : "argentina",
+//         edad : 33,
+//         online : true,
+//         amigos:["maria", "jose"]
+//         }
+
+//         console.log(Object.keys(usuario));
+
+//_______metodo Object.values
+
+// var usuario = {
+//         nombre : "fabrizio",
+//         password : "hola123",
+//         pais : "argentina",
+//         edad : 33,
+//         online : true,
+//         amigos:["maria", "jose"]
+//         }
+
+//         console.log(Object.values(usuario));
+
+//         console.log(usuario.amigos.length); // puedo usar el .length en una propiedad que sea un array
+//         console.log(usuario.amigos.push("joel")); 
+//         console.log(usuario);//agrego a joel
+
+
+//______________ bucle for in__________
+
+// var usuario = {
+//             nombre : "fabrizio",
+//             password : "hola123",
+//             pais : "argentina",
+//             edad : 33,
+//             online : true,
+//             amigos:["maria", "jose"]
+//             }
+// for(var clave in usuario){
+//     console.log(usuario[clave]);//muestra todos  los valores de cada propiedad
+// }
+
+// for(var clave in usuario){
+//     console.log(clave);//muestra todas las propiedades
+// }
+
+
+//___para ver cantidad de claves totales
+
+// var usuario = {
+//             nombre : "fabrizio",
+//             password : "hola123",
+//             pais : "argentina",
+//             edad : 33,
+//             online : true,
+//             amigos:["maria", "jose"]
+//             }
+//  var total = 0;
+// for(var clave in usuario){
+//     total++;
+//    return total;
+// }
+
+
+//_____this
+
+var usuario = {
+            nombre : "fabrizio",
+            password : "hola123",
+            pais : "argentina",
+            edad : 33,
+            online : true,
+            amigos:["maria", "jose"],
+        
+            }
+
+
+
+
+usuario.decirHola = function(){
+    return "hola " + this.nombre;
+}
+console.log(usuario.decirHola());
