@@ -625,20 +625,142 @@
 
 //_____this
 
-var usuario = {
-            nombre : "fabrizio",
-            password : "hola123",
-            pais : "argentina",
-            edad : 33,
-            online : true,
-            amigos:["maria", "jose"],
+// var usuario = {
+//             nombre : "fabrizio",
+//             password : "hola123",
+//             pais : "argentina",
+//             edad : 33,
+//             online : true,
+//             amigos:["maria", "jose"],
         
-            }
+//             }
 
 
 
 
-usuario.decirHola = function(){
-    return "hola " + this.nombre;
-}
-console.log(usuario.decirHola());
+// usuario.decirHola = function(){
+//     return "hola " + this.nombre;
+// }
+// console.log(usuario.decirHola());
+
+//---------------------clase 5-----------------------------
+
+//____________class___________
+
+//funciones constructoras
+
+// function Gato(nombre,edad,dueno){
+//     this.name = nombre;
+//     this.edad = edad;
+//     this.dueno = dueno;
+//     this.maullar = function(){
+//         return "Mi nombre es "
+//  + this.name + "...Meow!"    }
+// }
+
+// modo class
+
+// class Gato {
+//     constructor(nombre, edad, dueno) {
+//         this.name = nombre;
+//         this.edad = edad;
+//         this.dueno = dueno;
+//         this.maullar = function () {
+//             return "Mi nombre es "
+//                 + this.name + "...Meow!";
+//         };
+//     }s
+// }
+
+// //instancia de clase
+
+// var gato1 = new Gato("michi", 10,"fabri");
+// var gato2 = new Gato("canela", 3);
+// console.log(gato1);
+// console.log(gato2);
+// console.log(gato1.maullar());
+
+//prototype
+
+// class Gato {
+//     constructor(nombre, edad, dueno) {
+//         this.name = nombre;
+//         this.años = edad;
+//         this.dueno = dueno;
+//         this.maullar = function () {
+//             return "Mi nombre es "
+//                 + this.name + "...Meow!";
+//         };
+//     }
+// }
+
+
+// Gato.prototype.decirEdad = function(){ //sirve para agregar un metodo a la clase ya creada
+//     return this.años;
+// }
+
+// Gato.prototype.altura = 40;
+
+// Gato.prototype.color = function(color){
+//   return  this.color = color;
+// }
+
+// var gato1 = new Gato("michi", 10,"fabri");
+
+// console.log(gato1.decirEdad());
+// console.log(gato1.altura);
+// console.log(gato1.color("negro"));
+// console.log(gato1);
+
+
+//_____herencia clasica________
+
+
+// class Animal{
+//     constructor(nombre, raza, filum) {
+//         this.nombre = nombre;
+//         this.raza = raza;
+//         this.filum = filum;
+//         this.ladrar = function(){
+//             console.log("guau")
+//         }
+//     }
+    
+
+// }
+
+// class Perro extends Animal{
+//     constructor(nombre, raza, color,filum){ //al no traer raza,queda "undefined"
+//         super(nombre,raza);//los que ponga aca, los traigo de arriba,sino agrego el this." "
+//         this.color = color;//agrego color
+//         this.filum = filum;//cambio filum desde aca
+        
+//     }
+// }
+
+// var perrito1 = new Perro("Firulais","dalmata", "blanco","reino vegetal");// 
+
+// console.log(perrito1);//firulais,undefined,reino vegetal,blanco
+
+// perrito1.ladrar();//guau
+
+
+
+//_______callbacks(cb)
+
+//ej:
+
+// function decirHolaAlUsuario(usuario){
+//     return "hola" + usuario + "!";
+// }
+
+// function decirAdiosAlUsuario(usuario){
+//     return "adios" + usuario + "!";
+// }
+
+// function crearSaludo(usuario, cb){//cb es notacion,indica que hay funcion que se ejecuta  dentro de la funcion crear saludo
+//     return cb(usuario);
+// }
+
+// crearSaludo("fabri", decirHolaAlUsuario);
+// crearSaludo("fabri",decirAdiosAlUsuario);//lo paso en node
